@@ -102,7 +102,7 @@ textarea.addEventListener("blur", () => {
 const buttonsWithKeyAttr = document.querySelectorAll('[data-key*="Key"]');
 const simpleButtonsAll = [...buttonsWithKeyAttr, button1, button26, button27, button40, button41, button51, button52];
 
-function listenArrowFromKeyboard() {
+function listenSpecialKeyFormKeyboard() {
   document.addEventListener("keydown", (e) => {
     if (e.code === "ArrowLeft" || e.code === "ArrowRight" || e.code === "ArrowUp" || e.code === "ArrowDown") {
       e.preventDefault();
@@ -113,9 +113,18 @@ function listenArrowFromKeyboard() {
       textarea.value = leftPartString + rightPartString;
       textarea.setSelectionRange(mouseCurrentPosiion + 1, mouseCurrentPosiion + 1);
     }
+
+    if (e.code === "Tab") {
+      e.preventDefault();
+      let mouseCurrentPosiion = textarea.selectionStart;
+      let leftPartString = textarea.value.slice(0, mouseCurrentPosiion);
+      let rightPartString = "  " + textarea.value.slice(mouseCurrentPosiion, textarea.value.length);
+      textarea.value = leftPartString + rightPartString;
+      textarea.setSelectionRange(mouseCurrentPosiion + 2, mouseCurrentPosiion + 2);
+    }
   });
 }
-listenArrowFromKeyboard();
+listenSpecialKeyFormKeyboard();
 
 function changeRegister() {
   let numberCapsDown = 0;
