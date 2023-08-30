@@ -83,6 +83,9 @@ let button63 = createButton("button", row5, "basic", "ArrowRight", "►");
 let button64 = createButton("button", row5, "basic", "ControlRight", "Ctrl");
 [button56, button57, button58, button60, button61, button62, button63, button64].forEach((item) => item.classList.add("basic-dark"));
 
+if (!localStorage.getItem("language")) {
+  localStorage.setItem("language", "rus");
+}
 if (localStorage.getItem("language") === "eng") {
   const buttons = [button1, button16, button17, button18, button19, button20, button21, button22, button23, button24, button25, button26, button27, button31, button32, button33, button34, button35, button36, button37, button38, button39, button40, button41, button44, button45, button46, button47, button48, button49, button50, button51, button52, button53];
   const symbols = ["``", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]", "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "z", "x", "c", "v", "b", "n", "m", ",", ".", "/"];
@@ -229,3 +232,4 @@ function changeLanguage() {
   });
 }
 changeLanguage();
+console.log(localStorage);
