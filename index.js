@@ -93,7 +93,7 @@ if (localStorage.getItem("language") === "eng") {
 }
 
 const buttons = document.querySelectorAll("button");
-searchCurrentButton(buttons);
+searchCurrentButton(buttons,textarea);
 listenVirtualKeyBoardKey(keyboard, textarea);
 textarea.addEventListener("blur", () => {
   textarea.focus();
@@ -102,7 +102,7 @@ textarea.addEventListener("blur", () => {
 const buttonsWithKeyAttr = document.querySelectorAll('[data-key*="Key"]');
 const simpleButtonsAll = [...buttonsWithKeyAttr, button1, button26, button27, button40, button41, button51, button52];
 
-function listenSpecialKeyFormKeyboard() {
+function listenSpecialKeyFromKeyboard() {
   document.addEventListener("keydown", (e) => {
     if (e.code === "ArrowLeft" || e.code === "ArrowRight" || e.code === "ArrowUp" || e.code === "ArrowDown") {
       e.preventDefault();
@@ -124,7 +124,7 @@ function listenSpecialKeyFormKeyboard() {
     }
   });
 }
-listenSpecialKeyFormKeyboard();
+listenSpecialKeyFromKeyboard();
 
 function changeRegister() {
   let numberCapsDown = 0;
