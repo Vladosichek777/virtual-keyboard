@@ -2,7 +2,7 @@ let container = createElement("div", document.body, "container");
 let textarea = createElement("textarea", container, "textarea");
 textarea.setAttribute("cols", "75");
 textarea.setAttribute("rows", "10");
-textarea.focus();
+
 let keyboard = createElement("div", container, "keyboard");
 let row1 = createElement("div", keyboard, "row");
 let row2 = createElement("div", keyboard, "row");
@@ -88,6 +88,7 @@ if (localStorage.getItem("language") === "eng") {
   const symbols = ["``", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]", "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "z", "x", "c", "v", "b", "n", "m", ",", ".", "/"];
   buttons.forEach((button, index) => (button.innerHTML = symbols[index]));
 }
+
 const buttons = document.querySelectorAll("button");
 searchCurrentButton(buttons);
 listenVirtualKeyBoardKey(keyboard, textarea);
