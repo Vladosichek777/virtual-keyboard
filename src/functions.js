@@ -17,7 +17,21 @@ function searchCurrentButton(buttons, textarea) {
     for (let button of buttons) {
       if (button.dataset.key === e.code) {
         button.classList.add("active");
-        if (button.dataset.key !== "Backspace" && button.dataset.key !== "Tab" && button.dataset.key !== "Delete" && button.dataset.key !== "CapsLock" && button.dataset.key !== "Enter" && button.dataset.key !== "ShiftLeft" && button.dataset.key !== "ShiftRight" && button.dataset.key !== "ControlLeft" && button.dataset.key !== "MetaLeft" && button.dataset.key !== "AltLeft" && button.dataset.key !== "AltRight" && button.dataset.key !== "Space" && button.dataset.key !== "ControlRight") {
+        if (
+          button.dataset.key !== "Backspace" &&
+          button.dataset.key !== "Tab" &&
+          button.dataset.key !== "Delete" &&
+          button.dataset.key !== "CapsLock" &&
+          button.dataset.key !== "Enter" &&
+          button.dataset.key !== "ShiftLeft" &&
+          button.dataset.key !== "ShiftRight" &&
+          button.dataset.key !== "ControlLeft" &&
+          button.dataset.key !== "MetaLeft" &&
+          button.dataset.key !== "AltLeft" &&
+          button.dataset.key !== "AltRight" &&
+          button.dataset.key !== "Space" &&
+          button.dataset.key !== "ControlRight"
+        ) {
           e.preventDefault();
           let buttonContent = button.innerHTML;
           let mouseCurrentPosiion = textarea.selectionStart;
