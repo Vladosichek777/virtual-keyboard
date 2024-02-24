@@ -1,3 +1,6 @@
+
+//Create keyboard elements and exports required variables
+
 export const container = createElement("div", document.body, "container");
 export const textarea = createElement("textarea", container, "textarea");
 textarea.setAttribute("cols", "75");

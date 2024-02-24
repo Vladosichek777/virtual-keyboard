@@ -71,6 +71,7 @@ import {
 import changeRegister from "./src/changeRegister.js";
 import changeLanguage from "./src/changeLanguage.js";
 
+//check previous language and set current keyboard language
 if (!localStorage.getItem("language")) {
   localStorage.setItem("language", "rus");
 } else if (localStorage.getItem("language") === "eng") {
@@ -78,7 +79,6 @@ if (!localStorage.getItem("language")) {
   const symbols = ["``", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]", "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "z", "x", "c", "v", "b", "n", "m", ",", ".", "/"];
   buttons.forEach((button, index) => (button.innerHTML = symbols[index]));
 }
-
 
 
 //Textarea always on focus

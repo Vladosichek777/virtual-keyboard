@@ -67,7 +67,10 @@ import {
     button64,
 } from "./cretingElements.js";
 
+//variable, that seatch a buttons only with letters(attribute Key)
 const buttonsWithKeyAttr = document.querySelectorAll('[data-key*="Key"]');
+
+//variable, that search buttons with letters, also included buttons from russian keyboard
 const simpleButtonsAll = [...buttonsWithKeyAttr, button1, button26, button27, button40, button41, button51, button52];
 
 export default function changeRegister() {

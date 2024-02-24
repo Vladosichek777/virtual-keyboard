@@ -1,3 +1,5 @@
+
+//create all elements
 function createElement(element, place, elementClass) {
   const newElement = document.createElement(element);
   newElement.classList.add(elementClass);
@@ -5,13 +7,15 @@ function createElement(element, place, elementClass) {
   return newElement;
 }
 
+//create buttons
 function createButton(element, place, elementClass, keyCode, textContent) {
-  let button = createElement(element, place, elementClass);
+  const button = createElement(element, place, elementClass);
   button.setAttribute("data-key", `${keyCode}`);
   button.innerHTML = `${textContent}`;
   return button;
 }
 
+//Search button when user click down some button on physical keyboard
 function searchCurrentButton(buttons, textarea) {
   window.addEventListener("keydown", (e) => {
     for (let button of buttons) {
@@ -52,6 +56,7 @@ function searchCurrentButton(buttons, textarea) {
   });
 }
 
+//behavior for buttons with special actions
 function createActionSpecialKey(e, textarea) {
   if (e.target.dataset.key === "Backspace") {
     let mouseCurrentPosiion = textarea.selectionStart;
@@ -96,6 +101,7 @@ function createActionSpecialKey(e, textarea) {
   }
 }
 
+//listen clicks on the virtual keyboard 
 function listenVirtualKeyBoardKey(keyboard, textarea) {
   keyboard.addEventListener("mousedown", (e) => {
     if (e.target.dataset.key) {
@@ -104,6 +110,7 @@ function listenVirtualKeyBoardKey(keyboard, textarea) {
         e.target.classList.remove("active");
       }, 200);
 
+      //check on button with special behavior
       if (
         e.target.dataset.key !== "Backspace" &&
         e.target.dataset.key !== "Tab" &&
